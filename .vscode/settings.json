@@ -1,0 +1,8 @@
+{
+    "liveServer.settings.root": "/src",
+    "liveServer.settings.file": "index.html",
+    "liveServer.settings.ignoreFiles": [
+      "**/node_modules/**",
+      ".vscode/**"
+    ]
+  }
