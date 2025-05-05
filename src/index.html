@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style/style.css">
+    <title>Wildberries clone</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <a href="" class="header__logo">
+                <img src="media/wildberries______ 1 белый.svg" alt="Wildberries">
+            </a>
+
+            <div class="header__search">
+                <input type="text" placeholder="Найти на Wildberries">
+                <button class="header__search-btn">
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.01 11H14.21L13.94 10.73C14.92 9.59 15.51 8.12 15.51 6.5C15.51 2.91 12.6 0 9.01 0C5.42 0 2.51 3 2.51 6.5H0L3.84 10.5L8 6.5H4.51C4.51 4 6.53 2 9.01 2C11.49 2 13.51 4.01 13.51 6.5C13.51 8.98 11.49 11 9.01 11C8.36 11 7.75 10.86 7.19 10.62L5.71 12.1C6.68 12.67 7.8 13 9.01 13C10.62 13 12.09 12.41 13.23 11.43L13.5 11.7V12.49L18.51 17.48L20 16L15.01 11Z" fill="#ccc"/>
+                        </svg>                                    
+                </button>
+            </div>
+
+            <div class="header__cart">
+                <img src="media/cart.svg" alt="Корзина">
+                <span class="header__cart-counter">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="media/photo_2025-05-03_19-33-18.jpg" alt="Slider1"></div>
+              <div class="swiper-slide"><img src="media/photo_2025-05-03_20-53-04.jpg" alt="Slider2"></div>
+              <div class="swiper-slide"><img src="media/photo_2025-05-03_19-33-31.jpg" alt="Slider3"></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+        <section class="products">
+            <h2 class="products__title">Хиты продаж</h2>
+            <div class="products__grid">
+                 <!-- Товар 1 -->
+                <div class="product">  
+                    <div class="product__image-container">
+                        <img src="media-products/product1 (1).jpg" alt="Футболка" class="product__img">
+                        <div class="product__discount">-44%</div>
+                        <button class="product__cart-btn">
+                            <img src="media-products/shopping_cart.svg" alt="В корзину">
+                        </button>
+                        <button class="product__quick-view">Быстрый просмотр</button>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__price">
+                            <span class="product__price-current">32,99 р.</span>
+                            <span class="product__price-old">59,45 р.</span>   
+                        </div>
+                        <div class="product__name">Футболка базовая</div>
+                    </div>
+                </div>
+                 <!-- Товар 2 -->
+                 <div class="product">  
+                    <div class="product__image-container">
+                        <img src="media-products/product1 (2).jpg" alt="Когтеточка" class="product__img">
+                        <div class="product__discount">-46%</div>
+                        <button class="product__cart-btn">
+                            <img src="media-products/shopping_cart.svg" alt="В корзину">
+                        </button>
+                        <button class="product__quick-view">Быстрый просмотр</button>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__price">
+                            <span class="product__price-current">79,07 р.</span>
+                            <span class="product__price-old">148,64 р.</span>   
+                        </div>
+                        <div class="product__name">Когтеточка для кошки</div>
+                    </div>
+                </div>
+                <!-- Товар 3 -->
+                <div class="product">  
+                    <div class="product__image-container">
+                        <img src="media-products/product1 (3).jpg" alt="Кроссовки" class="product__img">
+                        <div class="product__discount">-62%</div>
+                        <button class="product__cart-btn">
+                            <img src="media-products/shopping_cart.svg" alt="В корзину">
+                        </button>
+                        <button class="product__quick-view">Быстрый просмотр</button>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__price">
+                            <span class="product__price-current">84,63 р.</span>
+                            <span class="product__price-old">222,92 р.</span>   
+                        </div>
+                        <div class="product__name">Кроссовки</div>
+                    </div>
+                </div>
+                <!-- Товар 4 -->
+                <div class="product">  
+                    <div class="product__image-container">
+                        <img src="media-products/product1 (4).jpg" alt="Костюм детский" class="product__img">
+                        <div class="product__discount">-67%</div>
+                        <button class="product__cart-btn">
+                            <img src="media-products/shopping_cart.svg" alt="В корзину">
+                        </button>
+                        <button class="product__quick-view">Быстрый просмотр</button>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__price">
+                            <span class="product__price-current">50,73 р.</span>
+                            <span class="product__price-old">154,88 р.</span>
+                        </div>
+                        <div class="product__name">Костюм детский</div>
+                    </div>
+                </div> 
+                <!-- Товар 5 -->
+                <div class="product">  
+                    <div class="product__image-container">
+                        <img src="media-products/product1 (5).jpg" alt="Сумка" class="product__img">
+                        <div class="product__discount">-74%</div>
+                        <button class="product__cart-btn">
+                            <img src="media-products/shopping_cart.svg" alt="В корзину">
+                        </button>
+                        <button class="product__quick-view">Быстрый просмотр</button>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__price">
+                            <span class="product__price-current">20,89 р.</span>
+                            <span class="product__price-old">81,75 р.</span>
+                        </div>
+                        <div class="product__name">Сумка</div>
+                    </div>
+                </div> 
+                <!-- Товар 6 -->
+                <div class="product">  
+                    <div class="product__image-container">
+                        <img src="media-products/product1 (6).jpg" alt="Кресло игровое" class="product__img">
+                        <div class="product__discount">-63%</div>
+                        <button class="product__cart-btn">
+                            <img src="media-products/shopping_cart.svg" alt="В корзину">
+                        </button>
+                        <button class="product__quick-view">Быстрый просмотр</button>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__price">
+                            <span class="product__price-current">181,74 р.</span>
+                            <span class="product__price-old">497,93 р.</span>
+                        </div>
+                        <div class="product__name">Кресло игровое</div>
+                    </div>
+                </div>
+                <!-- Товар 7 --> 
+                <div class="product">  
+                    <div class="product__image-container">
+                        <img src="media-products/product 7.jpg" alt="Стол письменный" class="product__img">
+                        <div class="product__discount">-66%</div>
+                        <button class="product__cart-btn">
+                            <img src="media-products/shopping_cart.svg" alt="В корзину">
+                        </button>
+                        <button class="product__quick-view">Быстрый просмотр</button>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__price">
+                            <span class="product__price-current">67,60 р.</span>
+                            <span class="product__price-old">204,19 р.</span>
+                        </div>
+                        <div class="product__name">Стол письменный</div>
+                    </div>
+                </div>
+                <!-- Товар 8 -->
+                <div class="product">  
+                    <div class="product__image-container">
+                        <img src="media-products/product 8.jpg" alt="Костюм детский" class="product__img">
+                        <div class="product__discount">-39%</div>
+                        <button class="product__cart-btn">
+                            <img src="media-products/shopping_cart.svg" alt="В корзину">
+                        </button>
+                        <button class="product__quick-view">Быстрый просмотр</button>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__price">
+                            <span class="product__price-current">60,99 р.</span>
+                            <span class="product__price-old">100,33 р.</span>
+                        </div>
+                        <div class="product__name">Костюм детский</div>
+                    </div>
+                </div>
+                <!-- Товар 9 --> 
+                <div class="product">  
+                    <div class="product__image-container">
+                        <img src="media-products/product 9.jpg" alt="Сумка" class="product__img">
+                        <div class="product__discount">-70%</div>
+                        <button class="product__cart-btn">
+                            <img src="media-products/shopping_cart.svg" alt="В корзину">
+                        </button>
+                        <button class="product__quick-view">Быстрый просмотр</button>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__price">
+                            <span class="product__price-current">15,21 р.</span>
+                            <span class="product__price-old">52,02 р.</span>
+                        </div>
+                        <div class="product__name">Сумка</div>
+                    </div>
+                </div> 
+                <!-- Товар 10 --> 
+                <div class="product">  
+                    <div class="product__image-container">
+                        <img src="media-products/product 10.jpg" alt="Постельное белье" class="product__img">
+                        <div class="product__discount">-69%</div>
+                        <button class="product__cart-btn">
+                            <img src="media-products/shopping_cart.svg" alt="В корзину">
+                        </button>
+                        <button class="product__quick-view">Быстрый просмотр</button>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__price">
+                            <span class="product__price-current">25,86 р.</span>
+                            <span class="product__price-old">86,13 р.</span>
+                        </div>
+                        <div class="product__name">Постельное белье</div>
+                    </div>
+                </div> 
+                 <!-- Товар 11 --> 
+                <div class="product">  
+                    <div class="product__image-container">
+                        <img src="media-products/product 11.jpg" alt="Кроссовки" class="product__img">
+                        <div class="product__discount">-33%</div>
+                        <button class="product__cart-btn">
+                            <img src="media-products/shopping_cart.svg" alt="В корзину">
+                        </button>
+                        <button class="product__quick-view">Быстрый просмотр</button>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__price">
+                            <span class="product__price-current">74,16 р.</span>
+                            <span class="product__price-old">111,10 р.</span>
+                        </div>
+                        <div class="product__name">Кроссовки</div>
+                    </div>
+                </div>
+                <!-- Товар 12 -->  
+                <div class="product">  
+                    <div class="product__image-container">
+                        <img src="media-products/product 12.jpg" alt="Стеллаж" class="product__img">
+                        <div class="product__discount">-62%</div>
+                        <button class="product__cart-btn">
+                            <img src="media-products/shopping_cart.svg" alt="В корзину">
+                        </button>
+                        <button class="product__quick-view">Быстрый просмотр</button>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__price">
+                            <span class="product__price-current">101,66 р.</span>
+                            <span class="product__price-old">267,54 р.</span>
+                        </div>
+                        <div class="product__name">Стеллаж</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+   
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/swiper-config.js" defer></script>
+<script src="js/product.js" defer></script>
+<script src="js/cart.js" defer></script>
+<script src="js/search.js" defer></script>
+</body>
+</html>
