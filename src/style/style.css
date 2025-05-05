@@ -38,6 +38,9 @@ body {
   position: relative;
   max-width: 864px;
 }
+.header__search:hover .header__search-btn svg path {
+  fill: #7b2cbf;
+}
 .header__search input {
   width: 100%;
   padding: 12px 20px;
@@ -60,6 +63,9 @@ body {
   background: none;
   border: none;
   cursor: pointer;
+}
+.header__search-btn svg path {
+  transition: fill 1s ease;
 }
 .header__cart {
   position: relative;
@@ -137,8 +143,8 @@ body {
 .swiper-pagination-bullet {
   background: #ccc;
   opacity: 1;
-  width: 5px;
-  height: 5px;
+  width: 7px;
+  height: 7px;
 }
 
 .swiper-pagination-bullet-active {
