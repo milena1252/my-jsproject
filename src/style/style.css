@@ -56,16 +56,21 @@ body {
 .header__search input::placeholder {
   color: #ccc;
 }
-.header__search-btn {
+.header__search-btn, .header__clear-search {
   position: absolute;
   right: 12px;
   top: 29%;
   background: none;
   border: none;
   cursor: pointer;
+  font-size: 20px;
+  color: #ccc;
 }
-.header__search-btn svg path {
+.header__search-btn svg path, .header__clear-search svg path {
   transition: fill 1s ease;
+}
+.header__clear-search:hover {
+  color: #7b2cbf;
 }
 .header__cart {
   position: relative;
@@ -305,12 +310,4 @@ body {
   color: #333;
   margin: 0;
   line-height: 1.3;
-}
-
-.error-message {
-  grid-column: 1/-1;
-  text-align: center;
-  padding: 20px;
-  color: #ff2e65;
-  font-weight: 500;
 }/*# sourceMappingURL=style.css.map */

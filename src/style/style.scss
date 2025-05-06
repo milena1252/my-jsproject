@@ -64,18 +64,26 @@ body {
         }
     }
 
-    &__search-btn {
+    &__search-btn, &__clear-search {
         position: absolute;
         right: 12px;
         top: 29%;
         background: none;
         border: none;
         cursor: pointer;
+        font-size: 20px;
+        color: #ccc;
 
         & svg path {
             transition: fill 1s ease; 
           }
 
+    }
+
+    &__clear-search {
+        &:hover {
+            color: #7b2cbf; 
+        }
     }
 
     &__cart {
@@ -331,13 +339,7 @@ body {
 
 }
 
-.error-message {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 20px;
-    color: #ff2e65;
-    font-weight: 500;
-}
+
 
 
   
