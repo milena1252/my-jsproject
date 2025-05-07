@@ -1,0 +1,86 @@
+[
+    {
+      "title": "Футболка базовая",
+      "price": 32.99,
+      "oldPrice": 59.45,
+      "image": "https://i.ibb.co/pjwmJ3MD/product1-1.jpg",
+      "discount": 44
+    },
+    {
+      "title": "Когтеточка для кошки",
+      "price": 79.07,
+      "oldPrice": 148.64,
+      "image": "https://i.ibb.co/XrvfJxNx/product1-2.jpg",
+      "discount": 46
+    },
+    {
+      "title": "Кроссовки",
+      "price": 84.63,
+      "oldPrice": 222.92,
+      "image": "https://i.ibb.co/gXVSqGd/product1-3.jpg",
+      "discount": 62
+    },
+    {
+      "title": "Костюм детский",
+      "price": 50.73,
+      "oldPrice": 154.88,
+      "image": "https://i.ibb.co/QFhmLv6Y/product1-4.jpg",
+      "discount": 67
+    },
+    {
+      "title": "Сумка",
+      "price": 20.89,
+      "oldPrice": 81.75,
+      "image": "https://i.ibb.co/gFFQZPxk/product1-5.jpg",
+      "discount": 74
+    },
+    {
+      "title": "Кресло игровое",
+      "price": 181.74,
+      "oldPrice": 497.93,
+      "image": "https://i.ibb.co/KxQx2NJc/product1-6.jpg",
+      "discount": 63
+    },
+    {
+      "title": "Стол письменный",
+      "price": 67.60,
+      "oldPrice": 204.19,
+      "image": "https://i.ibb.co/1fh1smPG/product-7.jpg",
+      "discount": 66
+    },
+    {
+      "title": "Костюм детский",
+      "price": 60.99,
+      "oldPrice": 100.33,
+      "image": "https://i.ibb.co/JjRWXn1T/product-8.jpg",
+      "discount": 39
+    },
+    {
+      "title": "Сумка",
+      "price": 15.21,
+      "oldPrice": 52.02,
+      "image": "https://i.ibb.co/svY61tr1/product-9.jpg",
+      "discount": 70
+    },
+    {
+      "title": "Постельное белье",
+      "price": 25.86,
+      "oldPrice": 86.13,
+      "image": "https://i.ibb.co/J4qRCPJ/product-10.jpg",
+      "discount": 69
+    },
+    {
+      "title": "Кроссовки",
+      "price": 74.16,
+      "oldPrice": 111.10,
+      "image": "https://i.ibb.co/4ZvF4NWQ/product-11.jpg",
+      "discount": 33
+    },
+    {
+      "title": "Стеллаж",
+      "price": 101.66,
+      "oldPrice": 267.54,
+      "image": "https://i.ibb.co/7NbN6Y0g/product-12.jpg",
+      "discount": 62
+    }
+  ]

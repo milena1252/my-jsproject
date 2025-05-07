@@ -56,16 +56,21 @@ body {
 .header__search input::placeholder {
   color: #ccc;
 }
-.header__search-btn {
+.header__search-btn, .header__clear-search {
   position: absolute;
   right: 12px;
   top: 29%;
   background: none;
   border: none;
   cursor: pointer;
+  font-size: 20px;
+  color: #ccc;
 }
-.header__search-btn svg path {
+.header__search-btn svg path, .header__clear-search svg path {
   transition: fill 1s ease;
+}
+.header__clear-search:hover {
+  color: #7b2cbf;
 }
 .header__cart {
   position: relative;
@@ -305,4 +310,46 @@ body {
   color: #333;
   margin: 0;
   line-height: 1.3;
+}
+
+.quick-view-over {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: zoom-out;
+}
+
+.quick-view-content {
+  position: relative;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.quick-view-img {
+  max-width: 100%;
+  max-height: 80vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 8px;
+}
+
+.quick-view-close {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  background: #fff;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }/*# sourceMappingURL=style.css.map */
