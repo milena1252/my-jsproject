@@ -1,16 +1,18 @@
-//загрузка товаров с API
+//если API не отвечает
 async function loadProducts() {
     const apiUrl = 'https://681891355a4b07b9d1cfc55c.mockapi.io/wb-products/products';
     try {
-        //запрос к API
         const response = await fetch(apiUrl);
-        //преобразуем ответ в JSON
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const products = await response.json();
-        //передаем данные
         renderProducts(products);
-        //обработка ошибок
     } catch (error) {
         console.error('Ошибка загрузки:', error);
+        // Можно показать сообщение пользователю
+        const productsGrid = document.querySelector('.products__grid');
+        productsGrid.innerHTML = '<p class="error-message">Не удалось загрузить товары. Пожалуйста, попробуйте позже.</p>';
     }
 }
 
@@ -18,7 +20,6 @@ async function loadProducts() {
 function renderProducts(products) {
     //Находим контейнер для товаров
     const productsGrid = document.querySelector('.products__grid');
-    
     // Очищаем существующие карточки (если есть)
     productsGrid.innerHTML = '';
     //для каждого товара
@@ -36,6 +37,15 @@ function renderProducts(products) {
                 </button>
                 <button class="product__quick-view">Быстрый просмотр</button>
             </div>
+
+            
+            <div class="quick-view-over">   
+                <div class="quick-view-content">
+                    <img src="${product.image}" alt="${product.title}" class="quick-view-img">
+                    <button class="quick-view-close">✕</button>
+                </div>
+            </div>
+
             <div class="product__info">
                 <div class="product__price">
                     <span class="product__price-current">${product.price.toFixed(2)} р.</span>
@@ -44,31 +54,32 @@ function renderProducts(products) {
                 <div class="product__name">${product.title}</div>
             </div>
         `;
+
+        const quickViewBtn = productElement.querySelector('.product__quick-view');
+        const over = productElement.querySelector('.quick-view-over');
+        const closeBtn = over.querySelector('.quick-view-close');
+
+        quickViewBtn.addEventListener('click', () => {
+        over.style.display = 'flex';
+        });
+
+        closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        over.style.display = 'none';
+        });
+
+        over.addEventListener('click', () => 
+        over.style.display = 'none');
+
         //добавляем созданный элемент в контейнер
         productsGrid.appendChild(productElement);
+        
+
     });
 }
 
 // Запускаем при загрузке страницы загрузку товаров
 document.addEventListener('DOMContentLoaded', loadProducts);
 
-//если API не отвечает
-async function loadProducts() {
-    const apiUrl = 'https://681891355a4b07b9d1cfc55c.mockapi.io/wb-products/products';
-    
-    try {
-        const response = await fetch(apiUrl);
-        
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        const products = await response.json();
-        renderProducts(products);
-    } catch (error) {
-        console.error('Ошибка загрузки:', error);
-        // Можно показать сообщение пользователю
-        const productsGrid = document.querySelector('.products__grid');
-        productsGrid.innerHTML = '<p class="error-message">Не удалось загрузить товары. Пожалуйста, попробуйте позже.</p>';
-    }
-}
+
+
