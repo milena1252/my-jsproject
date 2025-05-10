@@ -1,4 +1,3 @@
-//если API не отвечает
 async function loadProducts() {
     const apiUrl = 'https://681891355a4b07b9d1cfc55c.mockapi.io/wb-products/products';
     try {
@@ -37,7 +36,6 @@ function renderProducts(products) {
                 </button>
                 <button class="product__quick-view">Быстрый просмотр</button>
             </div>
-
             
             <div class="quick-view-over">   
                 <div class="quick-view-content">
@@ -54,6 +52,14 @@ function renderProducts(products) {
                 <div class="product__name">${product.title}</div>
             </div>
         `;
+         //добавляем созданный элемент в контейнер
+         productsGrid.appendChild(productElement);
+
+         //обработчик для кнопки корзины (товар в корзину)
+        const cartBtn = productElement.querySelector ('.product__cart-btn');
+        cartBtn.addEventListener ('click', () => {
+            addToCart(product);
+        });
 
         const quickViewBtn = productElement.querySelector('.product__quick-view');
         const over = productElement.querySelector('.quick-view-over');
@@ -67,14 +73,10 @@ function renderProducts(products) {
         e.stopPropagation();
         over.style.display = 'none';
         });
-
         over.addEventListener('click', () => 
         over.style.display = 'none');
 
-        //добавляем созданный элемент в контейнер
-        productsGrid.appendChild(productElement);
-        
-
+       
     });
 }
 
