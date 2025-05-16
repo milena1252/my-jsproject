@@ -1,9 +1,10 @@
-let cart = [];
+let cart = JSON.parse (localStorage.getItem('cart')) || []; //загружаем из localStorage
 
 //обновление счетчика корзины
 function updateCartCounter () {
     const counter = document.querySelector ('.header__cart-counter');
     counter.textContent = cart.length;
+    localStorage.setItem ('cart', JSON.stringify (cart));//сохраняем при любом изм-ии
 }
 
 const modal = document.querySelector ('.cart-modal');
@@ -21,13 +22,13 @@ function openCartModal () {
         itemElement.className = 'cart-item';
         itemElement.innerHTML = `
         <span class = "cart-item-name">${item.name}</span>
-        <span class = "cart-item-price">${item.prise}</span>
+        <span class = "cart-item-price">${item.price}</span>
         `;
         cartItemsContainer.append (itemElement);       
     });
 
     //считаем общую сумму
-    const total = cart.reduce ((sum, item) => sum + parseFloat(item.prise), 0);
+    const total = cart.reduce ((sum, item) => sum + parseFloat(item.price), 0);
     cartTotal.textContent = `Итого: ${total.toFixed(2)} р.`;
 
     //показываем модальное окно
@@ -48,7 +49,8 @@ function closeCartModal () {
 function clearCartModal() {
      if (cart.length > 0) {
         cart = [];
-        document.querySelector('.header__cart-counter').textContent = '0';
+        updateCartCounter ();
+       // document.querySelector('.header__cart-counter').textContent = '0';
         cartItemsContainer.innerHTML = '';
         cartTotal.textContent = 'Итого: 0.00 р.';
     }
@@ -56,6 +58,7 @@ function clearCartModal() {
 
  //инициализация корзины
  document.addEventListener ('DOMContentLoaded', () => {
+    updateCartCounter ();
     //обработчик клика на корзину в хедере
     document.querySelector ('.header__cart').addEventListener ('click', openCartModal);
 
@@ -75,7 +78,7 @@ function clearCartModal() {
  function addToCart (product) {
     cart.push ({
         name: product.title,
-        prise: product.price.toFixed(2)
+        price: product.price.toFixed(2)
     });
     updateCartCounter();
 }
