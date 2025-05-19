@@ -1,11 +1,14 @@
-var swiper = new Swiper(".mySwiper", {
+const swiper = new Swiper(".mySwiper", {
     cssMode: false,
     loop: true,
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
         disabledClass: 'swiper-button-hidden'
-      
+    },
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
     },
     pagination: {
         el: ".swiper-pagination",

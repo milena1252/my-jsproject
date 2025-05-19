@@ -45,4 +45,15 @@ document.addEventListener('DOMContentLoaded', function() {
     searchInput.addEventListener('keypress', function(e) {
       if (e.key === 'Enter') filterProducts();
     });
+
+    //меню-бургер
+    const burgerBtn = document.querySelector ('.burger__btn');
+    const burgerMenu = document.querySelector ('.burger__menu');
+
+    burgerBtn.addEventListener ('click', function(){
+      this.classList.toggle('active');
+      burgerMenu.classList.toggle ('active');
+      document.body.classList.toggle ('no-scroll');
+    })
+    
   });

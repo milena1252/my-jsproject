@@ -39,15 +39,26 @@ function renderProducts(products) {
             
             <div class="quick-view-over">   
                 <div class="quick-view-content">
-                    <img src="${product.image}" alt="${product.title}" class="quick-view-img">
-                    <button class="quick-view-close">✕</button>
+                    <div class="quick-view-left">
+                        <img src="${product.image}" alt="${product.title}" class="quick-view-img">
+                    </div>
+                    <div class="quick-view-right">
+                        <h3 class="quick-view-title">${product.title}</h3>
+                            <div class="quick-view-prices">
+                                <span class="quick-view-price">${product.price.toFixed(2)} BYN</span>
+                                <span class="quick-view-old-price">${product.oldPrice.toFixed(2)} BYN</span>
+                                <span class="quick-view-discount">-${product.discount}%</span>
+                            </div>
+                        <button class="quick-view-add-to-cart">Добавить в корзину</button>
+                     </div>    
+                        <button class="quick-view-close">✕</button>
                 </div>
             </div>
 
             <div class="product__info">
                 <div class="product__price">
-                    <span class="product__price-current">${product.price.toFixed(2)} р.</span>
-                    <span class="product__price-old">${product.oldPrice.toFixed(2)} р.</span>   
+                    <span class="product__price-current" data-price-byn="${product.price}">${product.price.toFixed(2)} р.</span>
+                    <span class="product__price-old" data-price-byn"${product.oldPrice}">${product.oldPrice.toFixed(2)} р.</span>   
                 </div>
                 <div class="product__name">${product.title}</div>
             </div>
@@ -64,18 +75,34 @@ function renderProducts(products) {
         const quickViewBtn = productElement.querySelector('.product__quick-view');
         const over = productElement.querySelector('.quick-view-over');
         const closeBtn = over.querySelector('.quick-view-close');
+        const addToCartModalBtn = over.querySelector('.quick-view-add-to-cart');
 
         quickViewBtn.addEventListener('click', () => {
+        document.body.classList.add('no-scroll');
         over.style.display = 'flex';
+        setTimeout (() => {
+            over.style.opacity = '1';
+        }, 10)
         });
 
         closeBtn.addEventListener('click', (e) => {
         e.stopPropagation();
+        document.body.classList.remove('no-scroll');
         over.style.display = 'none';
         });
-        over.addEventListener('click', () => 
-        over.style.display = 'none');
 
+        over.addEventListener('click', (e) => {
+            if (e.target === over) {
+                document.body.classList.remove('no-scroll');
+                over.style.display = 'none';
+            } 
+        });
+
+         addToCartModalBtn.addEventListener('click', () => {
+            addToCart(product);
+            document.body.classList.remove('no-scroll');
+            over.style.display = 'none';
+        });
        
     });
 }

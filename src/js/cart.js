@@ -3,7 +3,8 @@ let cart = JSON.parse (localStorage.getItem('cart')) || []; //загружаем
 //обновление счетчика корзины
 function updateCartCounter () {
     const counter = document.querySelector ('.header__cart-counter');
-    counter.textContent = cart.length;
+    const totalCount = cart.reduce ((sum, item) => sum + item.count, 0);
+    counter.textContent = totalCount;
     localStorage.setItem ('cart', JSON.stringify (cart));//сохраняем при любом изм-ии
 }
 
@@ -16,19 +17,38 @@ function openCartModal () {
     //очищаем контейнер
     cartItemsContainer.innerHTML = '';
 
-    //заполняем товарами
-    cart.forEach (item => {
+    //группируем товары по имени и суммируем кол-во
+    const groupedCart = cart.reduce ((acc, item) => {
+        const existingItem = acc.find (i => i.name === item.name && i.price === item.price);
+        if (existingItem) {
+            existingItem.count += item.count;
+        } else {
+            acc.push ({...item});
+        }
+        return acc;
+    }, []);
+
+    //заполняем корзину сгруппированными товарами
+    groupedCart.forEach (item => {
         const itemElement = document.createElement ('div');
         itemElement.className = 'cart-item';
         itemElement.innerHTML = `
-        <span class = "cart-item-name">${item.name}</span>
-        <span class = "cart-item-price">${item.price}</span>
+        <div class = "cart-item-image">
+            <img src = "${item.image}" alt = "${item.name}">
+        </div>
+        <div class = "cart-item-details">
+            <span class = "cart-item-name">${item.name}</span>
+            <div class = "cart-item-meta">
+                <span class = "cart-item-count">${item.count} шт.</span>
+                <span class = "cart-item-price">${(item.price * item.count).toFixed (2)} р.</span>
+            </div>
+        </div>
         `;
         cartItemsContainer.append (itemElement);       
     });
 
     //считаем общую сумму
-    const total = cart.reduce ((sum, item) => sum + parseFloat(item.price), 0);
+    const total = groupedCart.reduce ((sum, item) => sum + (item.price * item.count), 0);
     cartTotal.textContent = `Итого: ${total.toFixed(2)} р.`;
 
     //показываем модальное окно
@@ -50,10 +70,29 @@ function clearCartModal() {
      if (cart.length > 0) {
         cart = [];
         updateCartCounter ();
-       // document.querySelector('.header__cart-counter').textContent = '0';
         cartItemsContainer.innerHTML = '';
         cartTotal.textContent = 'Итого: 0.00 р.';
     }
+}
+
+ //добавление товара в корзину (выз. из product.js)
+ function addToCart (product) {
+    const existingItemIndex = cart.findIndex (
+        item => item.name === product.title && item.price === product.price
+    );
+    if (existingItemIndex >= 0) {
+        //увеличиваем кол-во существующего товара
+        cart[existingItemIndex].count += 1;
+    } else {
+        //добавляем новый товар
+        cart.push ({
+        name: product.title,
+        price: Number(product.price.toFixed(2)),
+        count: 1,
+        image: product.image
+    });
+    }
+    updateCartCounter();
 }
 
  //инициализация корзины
@@ -73,12 +112,3 @@ function clearCartModal() {
         }
     });
 });
-
- //добавление товара в корзину (выз. из product.js)
- function addToCart (product) {
-    cart.push ({
-        name: product.title,
-        price: product.price.toFixed(2)
-    });
-    updateCartCounter();
-}
