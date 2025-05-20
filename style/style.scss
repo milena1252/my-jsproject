@@ -21,7 +21,6 @@ body {
 .header {
     background: linear-gradient(97.26deg, #ed3cca .49%, #df34d2 14.88%, #d02bd9 29.27%, #bf22e1 43.14%, #ae1ae8 57.02%, #9a10f0 70.89%, #8306f7 84.76%, #7c1af8 99.15%), linear-gradient(rgba(0, 0, 0, .05), rgba(0, 0, 0, .05));
     padding: 10px 0 5px;
-    position: relative;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -30,6 +29,8 @@ body {
 
     @media (max-width:768px) {
         padding: 5px 0;
+        position: relative;
+        margin-bottom: 15px;
     }
 
     &__container{
@@ -46,7 +47,7 @@ body {
 
         @media (max-width:768px) {
         flex-wrap: wrap;
-        gap: 15px;
+        gap: 5px;
         padding: 8px 0px;
         }
     }
@@ -58,7 +59,7 @@ body {
         width: auto;
 
         @media (max-width:768px) {
-        height: 24px;
+        height: 20px;
         }
         }
     }
@@ -66,6 +67,10 @@ body {
     &__burger {
         margin-right: 15px;
         display: block;
+
+        @media (max-width:768px) {
+        margin-left: 15px;;
+        }
     }
 
     &__search {
@@ -94,13 +99,17 @@ body {
             padding: 20px;
             border: none;
             border-radius: 15px;
-            font-size: 14px;
+            font-size: 15px;
             outline: none;
             box-shadow: 0 1px 3px rgba (0, 0, 0, 0.1);
 
             &::placeholder {
                 color: #ccc;
                 font-size: 16px;
+            }
+
+            @media (max-width:768px) {
+            padding: 15px;
             }
         }
     }
@@ -538,7 +547,15 @@ body {
             height: 100%;
             object-fit: cover;
             border-radius: 16px; 
-        }  
+
+             @media (max-width:768px) {
+            border-radius: 12px;
+            }
+        } 
+        
+         @media (max-width:768px) {
+        border-radius: 12px;
+        }
     }
 }
 
@@ -703,18 +720,30 @@ body {
         align-items: center;
         gap: 8px;
         margin-bottom: 8px;
+
+         @media (max-width:768px) {
+        justify-content: space-between;
+        }
     }
 
     &__price-current {
         font-weight: 700;
         font-size: 18px;
         color: #333;
+
+        @media (max-width:768px) {
+         font-size: 15px;
+        }
     }
 
     &__price-old {
         font-size: 14px;
         color: #999;
         text-decoration: line-through;
+
+         @media (max-width:768px) {
+         font-size: 13px;
+        }
     }
 
    
@@ -762,6 +791,10 @@ body {
     align-items: center;
     justify-content: center;
     background: #f9f9f9;
+
+     @media (max-width:768px) {
+          padding: 10px;
+        }
     }
 
     &-img {
@@ -776,12 +809,21 @@ body {
     padding: 40px;
     display: flex;
     flex-direction: column;
+
+    @media (max-width:768px) {
+          padding: 10px;
+        }
     }
 
     &-title {
     font-size: 24px;
     margin-bottom: 20px;
     color: #333;
+
+    @media (max-width:768px) {
+        font-size: 20px;
+        margin: 30px 0 15px;
+        }
     }
 
     &-prices {
@@ -795,12 +837,20 @@ body {
     font-size: 24px;
     font-weight: 700;
     color: #ff2e65;
+
+     @media (max-width:768px) {
+          font-size: 18px;
+        }
     }
 
     &-old-price {
     font-size: 18px;
     text-decoration: line-through;
     color: #999;
+
+     @media (max-width:768px) {
+          font-size: 15px;
+        }
     }
 
     &-discount {
@@ -828,6 +878,11 @@ body {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(123, 44, 191, 0.3);
         }
+
+         @media (max-width:768px) {
+           padding: 10px;
+           font-size: 14px;
+        }
     }
 
     &-close {
@@ -849,6 +904,12 @@ body {
     &:hover {
     background: #e0e0e0;
     }
+
+    @media (max-width:768px) {
+         width: 25px;
+        height: 25px;
+        font-size: 15px;
+        }
 }
 
 }
